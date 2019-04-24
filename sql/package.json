@@ -1,7 +1,7 @@
 {
-  "name": "nosql",
+  "name": "sql",
   "version": "1.0.0",
-  "description": "NoSQL Demo Project",
+  "description": "SQL Demo Project",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
