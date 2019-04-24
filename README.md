@@ -3,21 +3,27 @@ Project for CS 480 at UIC comparing relational and non-relational databases
 
 ## Prerequisites
 * NPM installed
-* Brew installed (Mac OS)
+* Mongo DB installed (Instructions uses Homebrew for Mac OS installation)
+* Working knowledge of HTML, JavaScript, Node.js, Express, Basic SQL, REST
 
-## Install Mongo DB
-* `brew update`
-* `brew install mongodb`
-* `sudo mkdir -p /data/db`
-    * This is where the Mongo data files will be stored
-* sudo chown -R `id -un` /data/db
-    * update permissions for the directory
+## Install and Run Mongo DB
+* Update homebrew
+    * `brew update`
+* Install Mongo DB to machine
+    * `brew install mongodb`
+* Create directory where the Mongo data files will be stored
+    * `sudo mkdir -p /data/db`
+* update permissions for the directory
+    * sudo chown -R `id -un` /data/db
+* Start the Mongo daemon server
+    * `mongod`
+* Start the Mongo shell client in another terminal window
+    * `mongo`
 
-The `mongod` command will start the Mongo daemon server
-The `mongo` command in another terminal window will run the mongo 
-shell client in order to access the data
-
-# Creating Simple Node.js Project
-* `mkdir nosql`
-* `npm init`
-* `npm install express ejs --save`
+# Create a Simple Node.js Project
+* Create project folder
+    * `mkdir MyNodeProject`
+* Initialize the npm package.json file
+    * `npm init`
+* Install npm packages needed for the project
+    * `npm install express ejs mongoose --save`

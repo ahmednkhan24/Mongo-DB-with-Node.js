@@ -1,6 +1,7 @@
 // import express and necessary Node packages
-var express = require('express');
-var mongoose = require('mongoose');
+var express    = require('express'),
+    mongoose   = require('mongoose'),
+    bodyParser = require('body-parser');
 
 // execute the function to initialize the project as an express app
 var app = express();
@@ -10,47 +11,37 @@ app.set('views', './views');
 // allows us to not have to write .ejs extension for every ejs file
 app.set('view engine', 'ejs');
 
+// body-parser allows us to use form data
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 /*
  * try and find a database with name 'mydatabase' and connect to it.
  * if no database exists with the name 'mydatabase', it will create one
  */
-mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true });
+var databaseName = 'Industry';
+mongoose.connect('mongodb://localhost/' + databaseName, { useNewUrlParser: true });
 
-
-/*
- * This doesn't do anything to our database.
- * It tells Javascript that we want to be able to add cats to our database,
- * and a cat should have a pattern that looks like this.
- * 
- * The benefit of NoSQL is that we aren't forbidden from adding new stuff
- * or leaving certain things off.
- * 
- * It's just a way of providing structure because we do need some sort of
- * predictable structure in order to write JS code that can handle cats.
- * 
- * Let's say that we want a template to print out a cat's name and age.
- * We would need to make sure that every cat has the name and age attribute,
- * and be able to anticipate any cats in our db that do not have a name or age
- */
-var catSchema = new mongoose.Schema({
-    name: String,
-    age: Number
+var employeeSchema = new mongoose.Schema({
+    PERSON_NAME: String,
+    STREET: String,
+    CITY: String
 });
 
-/*
- * Took the cat schema pattern that says every cat should have a name and age
- * and compiled it into a model and save it to a variable named 'Cat'
- * and now we can use the Cat variable to make new cats, find cats, and remove
- * cats from the database. 
- * 
- * It takes the first parameter passed to it and creates a collection with
- * that name.
- * In Mongo DB, a collection is similar to an SQL table
- */
-var Cat = mongoose.model('Cat', catSchema);
+var employmentSchema = new mongoose.Schema({
+    PERSON_NAME: String,
+    COMPANY_NAME: String,
+    SALARY: Number
+});
 
+var companySchema = new mongoose.Schema({
+    COMPANY_NAME: String,
+    CITY: String
+});
 
+var Employee = mongoose.model('Employee', employeeSchema);
+var Employment = mongoose.model('Employment', employmentSchema);
+var Company = mongoose.model('Company', companySchema);
 
 
 // root path
@@ -58,19 +49,44 @@ app.get('/', function(request, response){
     response.render('index');
 });
 
-app.post('/insert', function(request, response){
+// view all employees
+app.get('/employee', function(request, response){
+    response.render('index');
+});
+
+// view the form to add a new employee to the employee database
+app.get('/employee/new', function(request, response){
+    response.render('new.ejs');
+});
+
+// insert an employee to database
+app.post('/employee', function(request, response){
+    var name = request.body.name;
+    var street = request.body.street;
+    var city = request.body.city;
+
+    var emp = new Employee({
+        PERSON_NAME: name,
+        STREET: street,
+        CITY: city
+    });
+
+    emp.save(function(error, savedEmployee){
+        if (error) {
+            console.log('Something went wrong trying to save the data.');
+        }
+        else {
+            console.log('Data successfully saved.');
+        }
+    });
 
     response.send('you hit the post request')
-
 });
 
 
 
 
-
-
-
-const PORT = process.env.PORT || 5006;
+const PORT = process.env.PORT || 5007;
 const IP = process.env.IP || '127.0.0.1';
 
 // allows the server to start listening for connections
