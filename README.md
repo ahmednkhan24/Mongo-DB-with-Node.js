@@ -10,7 +10,7 @@ Project for CS 480 at UIC comparing relational and non-relational databases
 * `brew install mongodb`
 * `sudo mkdir -p /data/db`
     * This is where the Mongo data files will be stored
-* `sudo chown -R ``id -un`` /data/db`
+* `sudo chown -R ```id -un``` /data/db`
     * update permissions for the directory
 
 The `mongod` command will start the Mongo daemon server
