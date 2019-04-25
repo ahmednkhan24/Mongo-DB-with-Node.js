@@ -1,0 +1,30 @@
+<% include partials/header %>
+            <!-- Edit Employee -->
+            <br>
+            <h1>Edit Employee in the Employee Database</h1>
+            <br>
+            <form action="/employees/<%= employee._id %>?_method=PUT" method="POST">
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <input type="text" class="form-control mb-2 form-control-lg" id="inlineFormInput" name="employee[PERSON_NAME]" value="<%= employee.PERSON_NAME %>">
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control mb-2 form-control-lg" id="inlineFormInput" name="employee[STREET]" value="<%= employee.STREET %>">
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control mb-2 form-control-lg" id="inlineFormInput" name="employee[CITY]" value="<%= employee.CITY %>">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-info mb-2 form-control-lg">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+            <form action="/employees/<%= employee._id %>?_method=DELETE" method="POST">
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-danger mb-2 form-control-lg">Delete</button>
+                    </div>
+                </div>
+            </form>
+<% include partials/footer %>

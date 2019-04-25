@@ -1,0 +1,26 @@
+<% include partials/header %>
+            <br>
+            <h3>EMPLOYEE TABLE</h3>
+            <br>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">PERSON_NAME</th>
+                    <th scope="col">STREET</th>
+                    <th scope="col">CITY</th>
+                    <th scope="col">EDIT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% employees.forEach(function(employee) { %>
+                        <tr>
+                            <td><%= employee.PERSON_NAME %></td>
+                            <td><%= employee.STREET %></td>
+                            <td><%= employee.CITY %></td>
+                            <td><a href="/employees/<%= employee._id %>/edit">Edit</a></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            <a href="/employees/new" class="btn btn-warning" role="button">Add Employee</a>
+<% include partials/footer %>
