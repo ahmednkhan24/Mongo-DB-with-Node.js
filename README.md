@@ -87,15 +87,15 @@ After understanding how we created and interact with our Mongo database in this 
 
 ## Run the Project
 * Clone the repository
-* Change into the /Mongo-DB-with-Node.js/nosql directory
-* Start the Mongo daemon server
+* Start the Mongo daemon server in a terminal window
     * `mongod`
-* Run the web app in a different terminal window
+* Change into the /Mongo-DB-with-Node.js/nosql directory in a different terminal window
+* Run the web app
     * `node index.js`
 * Pay close attention to the console that will output the link to access the application, and other important information while using the application
 
 
-## Create an Empty Node.js project
+## Create an Empty Node.js Project
 * Create project folder
     * `mkdir MyNodeProject`
 * Initialize the npm package.json file
