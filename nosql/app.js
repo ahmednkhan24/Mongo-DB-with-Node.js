@@ -76,6 +76,49 @@ var employeeSchema = new mongoose.Schema({
  */
 var Employee = mongoose.model('Employee', employeeSchema);
 
+function deleteAll(){
+    Employee.deleteMany({}, function(error){
+        if(error){
+            console.log('Something went wrong trying to purge the database.');
+        }
+        console.log('removed all Employees.');
+    });
+}
+
+var DataFile = require('./data');
+var data = DataFile.getData();
+
+function addAll(){
+    data.forEach(function(seed){
+        Employee.create(seed), function(error, createdEmployee){
+            if (error){
+                console.log('Something went wrong trying to save the data.');
+            }
+            else{
+                console.log('Sucessfully added Employee ' + createdEmployee.PERSON_NAME);
+            }
+        }
+    });
+}
+
+
+
+app.put('/employees/seed', function(request, response){
+    addAll()
+    response.redirect('/employees');
+});
+
+app.delete('/employees/seed', function(request, response){
+    deleteAll();
+    response.redirect('/employees');
+});
+
+
+
+
+
+
+
 
 // root path
 app.get('/', function(request, response){

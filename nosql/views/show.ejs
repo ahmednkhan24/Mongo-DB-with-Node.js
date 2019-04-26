@@ -23,4 +23,14 @@
                 </tbody>
             </table>
             <a href="/employees/new" class="btn btn-warning" role="button">Add Employee</a>
+            <br>
+            <br>
+            <br>
+            <form action="/employees/seed?_method=PUT" method="POST">
+                <button class="btn btn-dark">Init</button>
+            </form>
+            <br>
+            <form action="/employees/seed?_method=DELETE" method="POST">
+                <button class="btn btn-dark">Seed</button>
+            </form>
 <% include partials/footer %>
