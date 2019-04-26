@@ -30,14 +30,14 @@ DELETE: Delete
 
 RESTFUL ROUTES Implementation 
     
-name    url                     verb     desc
-============================================================================
-INDEX   /employees              GET     display a list of all employees
-NEW     /employees/new          GET     displays the form to add a new employee
-CREATE  /employees              POST    adds a new employee to the database
-EDIT    /employees/:id/edit     GET     shows the edit form for one campground
-UPDATE  /employees/:id          PUT     updates a particular employee, then redirects somewhere
-DESTROY /employees/:id          DELETE  deletes a particular employee, then redirects somehwere
+| name     | url                  | verb    | desc                                                    |
+| -------- |:--------------------:|:-------:|------------------------------------------------------ -:|
+| INDEX    | /employees           | GET     | display a list of all employees                         |
+| NEW      | /employees/new       | GET     | displays the form to add a new employee                 |
+| CREATE   | /employees           | POST    | adds a new employee to the database                     |
+| EDIT     | /employees/:id/edit  | GET     | shows the edit form for one campground                  |
+| UPDATE   | /employees/:id       | PUT     | updates a particular employee, then redirects somewhere |
+| DESTROY  | /employees/:id       | DELETE  | deletes a particular employee, then redirects somehwere |
 
 ## Prerequisites
 * NPM installed
