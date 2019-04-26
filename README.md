@@ -22,11 +22,12 @@ REST stands for Representational State Transfer, which is an architectural style
 data and functionality are considered resources and are accessed using Uniform Resource 
 Identifiers (URIs). These resources are acted upon through a set of defined operations. 
 They are designed to be a stateless communication protocol using HTTP.
+
 There are multiple RESTful commands, but the most common four are the CRUD method:
-POST:   Create 
-GET:    Read
-PUT:    Update
-DELETE: Delete 
+* POST:   Create 
+* GET:    Read
+* PUT:    Update
+* DELETE: Delete 
 
 RESTFUL ROUTES Implementation 
     
@@ -61,6 +62,10 @@ RESTFUL ROUTES Implementation
 ## Interaction with Mongo DB data
 Interacting with the Mongo DB database via the terminal is very similar to
 interacting with SQL via the terminal.
+
+Here's how one would go about navigating the terminal via SQL commands:
+![SQL Example](https://github.com/akhan227/SQL-vs-NoSQL/blob/master/imgs/sqlExample.png "SQL Example")
+
 
 ## Create a Simple Node.js Project
 * Create project folder
