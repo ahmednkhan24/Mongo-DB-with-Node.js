@@ -2,13 +2,12 @@
 var express          = require('express'),
     mongoose         = require('mongoose'),
     bodyParser       = require('body-parser'),
-    methodOverride   = require('method-override'),
-    expressSanitizer = require('express-sanitizer');
+    methodOverride   = require('method-override');
 
 // execute the function to initialize the project as an express app
 var app = express();
 
-// location of view files for responses 
+// location of ejs/HTML files for responses 
 app.set('views', './views');
 // allows us to not have to write .ejs extension for every ejs file
 app.set('view engine', 'ejs');
@@ -17,28 +16,25 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 /*
- * When rendering HTML, a user could potentially enter a harmful script,
- * so sanitizer will help us not run that code
- * Not really necessary for this project, but a good reminder nonetheless.
- * 
- * Only requirement is that it is used after bodyParser
- */
-app.use(expressSanitizer());
-
-/*
  * allows us to override methods in order to use PUT requests in our forms
  * because HTML forms don't support PUT requests, only GET and POST
  */
 app.use(methodOverride("_method"));
 
-// fix all mongoose deprecation warnings
+/*
+ * fix all mongoose deprecation warnings.
+ *
+ * Mongoose provides Mongo DB object modelling for Node.js
+ * It provides a schema based solution to model our data.
+ * Mongoose makes it easier and cleaner for us to interact with our database
+ */
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 /*
- * try and find a database with name 'mydatabase' and connect to it.
- * if no database exists with the name 'mydatabase', it will create one
+ * try and find a database with name 'Industry' and connect to it.
+ * if no database exists with the name 'Industry', it will create one
  */
 var databaseName = 'Industry';
 mongoose.connect('mongodb://localhost/' + databaseName, { useNewUrlParser: true });

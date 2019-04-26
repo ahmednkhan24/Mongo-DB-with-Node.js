@@ -31,7 +31,7 @@ There are multiple RESTful commands, but the most common four are the CRUD metho
 
 RESTFUL ROUTES Implementation 
     
-| name     | url                  | verb    | desc                                                    |
+| NAME     | URL                  | VERB    | DESCRIPTION                                             |
 | -------- |:--------------------:|:-------:|--------------------------------------------------------:|
 | INDEX    | /employees           | GET     | display a list of all employees                         |
 | NEW      | /employees/new       | GET     | displays the form to add a new employee                 |
@@ -69,10 +69,14 @@ Here's how one would go about navigating the terminal via SQL commands:
 Here's how one would go about navigating the terminal via Mongo commands:
 ![Mongo Example](https://github.com/akhan227/SQL-vs-NoSQL/blob/master/imgs/mongoExample.png "Mongo Example")
 
+After understanding how we created and interact with our Mongo database, you can also see a quick small
+example on how to do the same in SQL [here](https://github.com/akhan227/SQL-vs-NoSQL/example.sql).
+
 ## Create a Simple Node.js Project
 * Create project folder
     * `mkdir MyNodeProject`
 * Initialize the npm package.json file
     * `npm init`
 * Install npm packages needed for the project
-    * `npm install express ejs mongoose --save`
+    * `npm install <LIST PACKAGES HERE> --save`
+
