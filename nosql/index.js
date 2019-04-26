@@ -1,3 +1,5 @@
+// SETUP + CONFIGURATION
+//--------------------------------------------------------------------------------------------------
 // import express and necessary Node packages
 var express          = require('express'),
     mongoose         = require('mongoose'),
@@ -21,6 +23,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
  */
 app.use(methodOverride("_method"));
 
+// DATABASE CONNECTION + DEFINITION
+//--------------------------------------------------------------------------------------------------
 /*
  * fix all mongoose deprecation warnings.
  *
@@ -72,18 +76,13 @@ var employeeSchema = new mongoose.Schema({
  */
 var Employee = mongoose.model('Employee', employeeSchema);
 
-function deleteAll(){
-    Employee.deleteMany({}, function(error){
-        if(error){
-            console.log('Something went wrong trying to purge the database.');
-        }
-        console.log('removed all Employees.');
-    });
-}
-
+// RESTFUL ROUTING
+//--------------------------------------------------------------------------------------------------
+// load the sample data
 var DataFile = require('./data');
-var data = DataFile.getData();
+const data = DataFile.getData();
 
+// function to add all contents of the data.js file to the database when called
 function addAll(){
     data.forEach(function(seed){
         Employee.create(seed), function(error, createdEmployee){
@@ -91,39 +90,49 @@ function addAll(){
                 console.log('Something went wrong trying to save the data.');
             }
             else{
-                console.log('Sucessfully added Employee ' + createdEmployee.PERSON_NAME);
+                //console.log('Sucessfully added Employee ' + createdEmployee.PERSON_NAME);
             }
         }
     });
+    console.log('Added all sample Employees to the database.')
 }
 
+// function to delete all contents of the database when called
+function deleteAll(){
+    Employee.deleteMany({}, function(error){
+        if(error){
+            console.log('Something went wrong trying to purge the database.');
+        }
+        console.log('Removed all sample Employees from the database.');
+    });
+}
 
-
+// path to add data to the database
 app.put('/employees/seed', function(request, response){
+    console.log('Route Hit: PUT /employees/seed');
     addAll()
     response.redirect('/employees');
 });
 
+// path to delete data from the database
 app.delete('/employees/seed', function(request, response){
+    console.log('Route Hit: DELETE /employees/seed');
     deleteAll();
     response.redirect('/employees');
 });
 
-
-
-
-
-
-
-
-// root path
+// root path - landing page
 app.get('/', function(request, response){
+    console.log('Route Hit: GET /');
     response.render('index');
 });
 
 // READ: view all employees
 app.get('/employees', function(request, response){
+    console.log('Route Hit: GET /employees');
     Employee.find({}, function(error, allEmployees){
+        console.log('All data from database:');
+        console.log(allEmployees);
         if (error){
             console.log("Something went wrong trying to find the data.");
             response.render('404');
@@ -136,13 +145,13 @@ app.get('/employees', function(request, response){
 
 // view the form to add a new employee to the employee database
 app.get('/employees/new', function(request, response){
+    console.log('Route Hit: GET /employees/new');
     response.render('new.ejs');
 });
 
 // CREATE: insert an employee to database
 app.post('/employees', function(request, response){
-    // clean the body of any potential malicious script
-    request.body.employee.body = request.sanitize();
+    console.log('Route Hit: POST /employees');
 
     // grab the data from the HTML form
     var data = request.body.employee;
@@ -164,6 +173,7 @@ app.post('/employees', function(request, response){
 
 // view the form to edit an employee from the employee database
 app.get('/employees/:id/edit', function(request, response){
+    console.log('Route Hit: GET /employees/id/edit');
     Employee.findById(request.params.id, function(error, foundEmployee){
         if (error){
             console.log('Something went wrong.');
@@ -177,8 +187,7 @@ app.get('/employees/:id/edit', function(request, response){
 
 // UPDATE: update an employee from the employee database
 app.put('/employees/:id', function(request, response){
-    // clean the body of any potential malicious script
-    request.body.employee.body = request.sanitize();
+    console.log('Route Hit: PUT /employees/id');
 
     Employee.findByIdAndUpdate(request.params.id, request.body.employee, function(error, updatedEmployee){
         if (error) {
@@ -193,6 +202,7 @@ app.put('/employees/:id', function(request, response){
 
 // DESTROY: delete an employee from the employee database
 app.delete('/employees/:id', function(request, response){
+    console.log('Route Hit: DELETE /employees/id');
     Employee.findByIdAndRemove(request.params.id, function(error){
         if (error) {
             console.log('Something went wrong trying to save the data.');
@@ -209,12 +219,12 @@ app.get("*", function(request,response){
     response.render('404');
  });
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 3000;
 const IP = process.env.IP || '127.0.0.1';
 
 // allows the server to start listening for connections
 var server = app.listen(PORT, IP, function(){
-    console.log('Project server has started');
+    console.log('Server has started');
     var host = server.address().address;
     var port = server.address().port;
     console.log('running at http://' + host + ':' + port)

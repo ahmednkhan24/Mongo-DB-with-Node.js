@@ -70,13 +70,17 @@ Here's how one would go about navigating the terminal via Mongo commands:
 ![Mongo Example](https://github.com/akhan227/SQL-vs-NoSQL/blob/master/imgs/mongoExample.png "Mongo Example")
 
 After understanding how we created and interact with our Mongo database, you can also see a quick small
-example on how to do the same in SQL [here](https://github.com/akhan227/SQL-vs-NoSQL/example.sql).
+example on how to do the same in SQL [here](https://github.com/akhan227/SQL-vs-NoSQL/blob/master/example.sql).
 
-## Create a Simple Node.js Project
+## Create the Node.js Project
 * Create project folder
     * `mkdir MyNodeProject`
 * Initialize the npm package.json file
     * `npm init`
 * Install npm packages needed for the project
     * `npm install <LIST PACKAGES HERE> --save`
-
+* Add all of the contents from [this](https://github.com/akhan227/SQL-vs-NoSQL/tree/master/nosql) folder that isn't already present to the directory 
+* Start the Mongo daemon server
+    * `mongod`
+* Run the web app
+    * `node index.js`
