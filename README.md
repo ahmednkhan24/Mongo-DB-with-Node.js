@@ -1,6 +1,6 @@
 # Mongo DB Integration with Node.js
 
-Github Repository Link: https://github.com/akhan227/SQL-vs-NoSQL/
+Github Repository Link: https://github.com/akhan227/Mongo-DB-with-Node.js
 
 When it comes to database systems, there are two main types to choose from:
 relational or non-relational databases. Another term heavily used is SQL and No-SQL,
