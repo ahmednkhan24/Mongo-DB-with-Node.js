@@ -78,22 +78,33 @@ Here's how one would go about navigating the terminal via Mongo commands:
 
 After understanding how we created and interact with our Mongo database in this project, you can also see a quick small example on how to create the same database used in SQL [here](https://github.com/akhan227/SQL-vs-NoSQL/blob/master/example.sql).
 
-## Create the Node.js Project
+## Node.js Packages Used
+* Express: framework that provides a robust set of features for web applications
+* Mongoose: schema-based solution to model application data
+* Body-Parser: HTML form body parsing middleware
+* Method-Override: Lets you use HTTP verbs such as PUT or DELETE since HTML forms do not support it
+* EJS: Embedded JavaScript templates
+
+## Run the Project
+* Clone the repository
+* Change into the /Mongo-DB-with-Node.js/nosql directory
+* Start the Mongo daemon server
+    * `mongod`
+* Run the web app in a different terminal window
+    * `node index.js`
+* Pay close attention to the console that will output the link to access the application, and other important information while using the application
+
+
+## Create an Empty Node.js project
 * Create project folder
     * `mkdir MyNodeProject`
 * Initialize the npm package.json file
     * `npm init`
 * Install npm packages needed for the project
     * `npm install <LIST PACKAGES HERE> --save`
-    * Packages used
-        * Express: framework that provides a robust set of features for web applications
-        * Mongoose: schema-based solution to model application data
-        * Body-Parser: HTML form body parsing middleware
-        * Method-Override: Lets you use HTTP verbs such as PUT or DELETE since HTML forms do not support it
-        * EJS: Embedded JavaScript templates
 * Add all of the contents from [this](https://github.com/akhan227/SQL-vs-NoSQL/tree/master/nosql) folder that isn't already present to the directory 
 * Start the Mongo daemon server
     * `mongod`
-* Run the web app
+* Run the web app in a different terminal window
     * `node index.js`
 * Pay close attention to the console that will output the link to access the application, and other important information while using the application
