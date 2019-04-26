@@ -66,6 +66,8 @@ interacting with SQL via the terminal.
 Here's how one would go about navigating the terminal via SQL commands:
 ![SQL Example](https://github.com/akhan227/SQL-vs-NoSQL/blob/master/imgs/sqlExample.png "SQL Example")
 
+Here's how one would go about navigating the terminal via Mongo commands:
+![Mongo Example](https://github.com/akhan227/SQL-vs-NoSQL/blob/master/imgs/mongoExample.png "Mongo Example")
 
 ## Create a Simple Node.js Project
 * Create project folder
