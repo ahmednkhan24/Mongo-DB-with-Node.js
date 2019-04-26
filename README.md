@@ -96,4 +96,4 @@ After understanding how we created and interact with our Mongo database in this 
     * `mongod`
 * Run the web app
     * `node index.js`
-* Pay close attention to the console that will output the link to access the application, and other important features while using the application
+* Pay close attention to the console that will output the link to access the application, and other important information while using the application
