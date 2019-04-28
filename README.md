@@ -9,6 +9,9 @@ since most relational databases are interactd with through the use of SQL.
 Relational databases are tabular, flat, and very inflexible. 
 Non-relational databases, on the other hand, are not tabular, can be nested, and are very flexible.
 
+This project is in no way saying that relational databases are inferiror to non-relational databases,
+but simply to showcase the differences between the two and to demonstrate the use-cases.
+
 Mongo DB is one of the most popular non-relational database systems used in industry
 for the advantages non-relational databases bring, but also because the data is stored in a structure
 called BSON, which stands for Binary JavaScript Object Notation. The data is already stored in a
@@ -30,7 +33,7 @@ There are multiple RESTful commands, but the most common four are the CRUD metho
 * POST:   Create 
 * GET:    Read
 * PUT:    Update
-* DELETE: Delete 
+* DELETE: Destroy
 
 RESTFUL ROUTES Implementation 
     
@@ -44,12 +47,14 @@ RESTFUL ROUTES Implementation
 | DESTROY  | /employees/:id       | DELETE  | deletes a particular employee, then redirects somehwere |
 
 ## Prerequisites
+* A favorite text editor or IDE (project developed using Visual Studio Code)
+* A favorite web broswer of your choice (project developed using Google Chrome)
 * NPM and Node.js installed
 * Mongo DB installed (Instructions uses Homebrew for Mac OS installation)
-* Moderate knowledge of SQL, HTML, JavaScript, Node.js
+* Knowledge of SQL, HTML, JavaScript, Node.js
 
 ## Install and Run Mongo DB
-This demo was created using the Mac OS X 10.14.4 operating system.
+This demo was created using the Mac OS 10.14.4 operating system.
 If using any other operating system to run this project, instructions may differ.
 Please refer to your OS's documentation to download and configure the software needed for this project.
 
