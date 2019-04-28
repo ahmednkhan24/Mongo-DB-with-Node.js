@@ -121,4 +121,10 @@ After understanding how we created and interact with our Mongo database in this 
 ## Example Images
 Here are images of the project for ease.
 
-![Landing Page](https://github.com/akhan227/SQL-vs-NoSQL/blob/master/imgs/sqlExample.png "SQL Example")
+![Landing Page](https://github.com/akhan227/Mongo-DB-with-Node.js/blob/master/imgs/landing.png "Landing Page")
+
+![Employee Table](https://github.com/akhan227/Mongo-DB-with-Node.js/blob/master/imgs/table.png "Employee Table")
+
+![Add Employee](https://github.com/akhan227/Mongo-DB-with-Node.js/blob/master/imgs/create.png "Add Employee")
+
+![Edit Employee](https://github.com/akhan227/Mongo-DB-with-Node.js/blob/master/imgs/edit.png "Edit Employee")
