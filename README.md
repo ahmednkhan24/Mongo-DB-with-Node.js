@@ -22,6 +22,10 @@ This project will explain how to use Mongo DB, but also how to integrate it with
 using Node.js in order to demonstrante the power of Mongo DB, and also the almost seamless integration
 with JavaScript frameworks like Node.js.
 
+## Authors
+Ahmed Khan was responsible for creating the demo and the README.md file.
+Hamza Shahid was responsible for creating the powerpoint presentation.
+
 ## REST
 This web application adheres to RESTful routing.
 REST stands for Representational State Transfer, which is an architectural style where
@@ -113,3 +117,8 @@ After understanding how we created and interact with our Mongo database in this 
 * Run the web app in a different terminal window
     * `node index.js`
 * Pay close attention to the console that will output the link to access the application, and other important information while using the application
+
+## Example Images
+Here are images of the project for ease.
+
+![Landing Page](https://github.com/akhan227/SQL-vs-NoSQL/blob/master/imgs/sqlExample.png "SQL Example")
