@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
  * allows us to override methods in order to use PUT requests in our forms
  * because HTML forms don't support PUT requests, only GET and POST
  */
-app.use(methodOverride("_method"));
+app.use(methodOverride('_method'));
 
 // DATABASE CONNECTION + DEFINITION
 //--------------------------------------------------------------------------------------------------
@@ -134,7 +134,7 @@ app.get('/employees', function(request, response){
         console.log('All data from database:');
         console.log(allEmployees);
         if (error){
-            console.log("Something went wrong trying to find the data.");
+            console.log('Something went wrong trying to find the data.');
             response.render('404');
         }
         else{
@@ -215,7 +215,7 @@ app.delete('/employees/:id', function(request, response){
 });
 
 // any other URL that isn't defined here should redirect to the 404 page
-app.get("*", function(request,response){
+app.get('*', function(request,response){
     response.render('404');
  });
 
