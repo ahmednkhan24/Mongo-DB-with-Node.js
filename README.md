@@ -24,7 +24,7 @@ with JavaScript frameworks like Node.js.
 
 ## Authors
 * Ahmed Khan was responsible for creating the demo and the README.md file.
-* Hamza Shahid was responsible for creating the powerpoint presentation.
+* Hamza Shahid was responsible for creating the presentation slides.
 
 ## REST
 This web application adheres to RESTful routing.
