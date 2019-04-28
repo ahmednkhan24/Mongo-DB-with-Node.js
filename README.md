@@ -23,8 +23,8 @@ using Node.js in order to demonstrante the power of Mongo DB, and also the almos
 with JavaScript frameworks like Node.js.
 
 ## Authors
-Ahmed Khan was responsible for creating the demo and the README.md file.
-Hamza Shahid was responsible for creating the powerpoint presentation.
+* Ahmed Khan was responsible for creating the demo and the README.md file.
+* Hamza Shahid was responsible for creating the powerpoint presentation.
 
 ## REST
 This web application adheres to RESTful routing.
