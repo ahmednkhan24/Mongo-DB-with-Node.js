@@ -75,7 +75,7 @@ Please refer to your OS's documentation to download and configure the software n
 * Start the Mongo shell client in another terminal window
     * `mongo`
 
-## Interaction with Mongo DB data
+## Interaction with Mongo DB Data
 Interacting with the Mongo DB database via the terminal is very similar to
 interacting with SQL via the terminal.
 
