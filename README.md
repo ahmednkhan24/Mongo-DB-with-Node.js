@@ -1,7 +1,5 @@
 # Mongo DB Integration with Node.js
 
-Github Repository Link: https://github.com/akhan227/Mongo-DB-with-Node.js
-
 When it comes to database systems, there are two main types to choose from:
 relational or non-relational databases. Another term heavily used is SQL and No-SQL,
 since most relational databases are interactd with through the use of SQL.
@@ -21,10 +19,6 @@ too much difficulty.
 This project will explain how to use Mongo DB, but also how to integrate it within a web application
 using Node.js in order to demonstrante the power of Mongo DB, and also the almost seamless integration
 with JavaScript frameworks like Node.js.
-
-## Authors
-* Ahmed Khan was responsible for creating the demo and the README.md file.
-* Hamza Shahid was responsible for creating the presentation slides.
 
 ## REST
 This web application adheres to RESTful routing.
