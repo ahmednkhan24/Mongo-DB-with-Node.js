@@ -20,6 +20,10 @@ This project will explain how to use Mongo DB, but also how to integrate it with
 using Node.js in order to demonstrante the power of Mongo DB, and also the almost seamless integration
 with JavaScript frameworks like Node.js.
 
+## Authors
+* Ahmed Khan was responsible for creating the demo and the README.md file.
+* Hamza Shahid was responsible for creating the presentation slides.
+
 ## REST
 This web application adheres to RESTful routing.
 REST stands for Representational State Transfer, which is an architectural style where
