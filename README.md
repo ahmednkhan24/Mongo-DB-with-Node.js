@@ -2,7 +2,7 @@
 
 When it comes to database systems, there are two main types to choose from:
 relational or non-relational databases. Another term heavily used is SQL and No-SQL,
-since most relational databases are interactd with through the use of SQL.
+since most relational databases are interacted with through the use of SQL.
 
 Relational databases are tabular, flat, and very inflexible. 
 Non-relational databases, on the other hand, are not tabular, can be nested, and are very flexible.
